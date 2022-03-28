@@ -1,10 +1,14 @@
 # Servidor TCP
 import socket
 
+# Puertos <1024 reservados
 PORT = 2001
 HOST = 'localhost'
 
-# Creamos un socket, como es un TCP será con SOCK_STREAM
+# PROTOCOLO: AF_INET -> IPV4
+# # UDP -> SOCK_DGRAM
+# # TCP -> SOCK_STREAM
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Puerto de escucha definido, pero de recepción aleatorio. Recibimos Tupla.

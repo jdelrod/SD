@@ -1,8 +1,10 @@
 # Servidor UDP
 import socket
 
+# Puertos <1024 reservados
 PORT = 2000
-HOST = 'localhost'
+HOST = 'localhost' #192.168.56.1'
+
 # PROTOCOLO: AF_INET -> IPV4
 # # UDP -> SOCK_DGRAM
 # # TCP -> SOCK_STREAM
@@ -24,6 +26,14 @@ print("Recibido mensaje: " + buffer.decode("utf-8")
 
 #Enviamos OK
 s.sendto("Fin de la transmisión cliente.".encode("utf-8"), addr_c) #Enviamos una tupla
+
+# Prueba de cifrado de datos
+buffer, addr_c = s.recvfrom(1024)
+X = "aeiou"
+Y = "12345"
+translation_table = str.maketrans(Y, X)
+texto = buffer.decode("utf-8").translate(translation_table)
+print(texto)
 
 #cerramos el socket
 s.close()
