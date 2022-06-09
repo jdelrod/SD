@@ -1,0 +1,170 @@
+[
+    {
+        "id": "b5abedf84e3c9cde",
+        "type": "tab",
+        "label": "Context",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a3819fd52e0e884b",
+        "type": "inject",
+        "z": "b5abedf84e3c9cde",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "c3a1693d8a8d3118"
+            ]
+        ]
+    },
+    {
+        "id": "c3a1693d8a8d3118",
+        "type": "function",
+        "z": "b5abedf84e3c9cde",
+        "name": "Contador local al nodo",
+        "func": "var i = context.get('cont') || 0;\ni++;\nmsg.payload = \"El contador local al nodo es igual a \" + i;\ncontext.set('cont', i)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 80,
+        "wires": [
+            [
+                "f94e291cbd2c4a99"
+            ]
+        ]
+    },
+    {
+        "id": "f94e291cbd2c4a99",
+        "type": "debug",
+        "z": "b5abedf84e3c9cde",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "362b11d20974d54b",
+        "type": "inject",
+        "z": "b5abedf84e3c9cde",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "785037a235fcf01c"
+            ]
+        ]
+    },
+    {
+        "id": "159750abe7ae28b6",
+        "type": "inject",
+        "z": "b5abedf84e3c9cde",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "41f196778a3b1df7"
+            ]
+        ]
+    },
+    {
+        "id": "785037a235fcf01c",
+        "type": "function",
+        "z": "b5abedf84e3c9cde",
+        "name": "Contador compartido en el flujo",
+        "func": "var i = flow.get('cont') || 0;\ni++;\nmsg.payload = \"El contador compartido del flujo es igual a \" + i;\nflow.set('cont', i)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "f94e291cbd2c4a99"
+            ]
+        ]
+    },
+    {
+        "id": "41f196778a3b1df7",
+        "type": "function",
+        "z": "b5abedf84e3c9cde",
+        "name": "Contador global",
+        "func": "var i = global.get('cont') || 0;\ni++;\nmsg.payload = \"El contador global es igual a \" + i;\nglobal.set('cont', i)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "f94e291cbd2c4a99"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "id": "feb2047f7bbe15eb",
+        "type": "tab",
+        "label": "UDP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4e302017c9d24391",
+        "type": "inject",
+        "z": "feb2047f7bbe15eb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Holy cow!",
+        "payloadType": "str",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "f2a7c9742502445c"
+            ]
+        ]
+    },
+    {
+        "id": "f2a7c9742502445c",
+        "type": "udp out",
+        "z": "feb2047f7bbe15eb",
+        "name": "",
+        "addr": "localhost",
+        "iface": "",
+        "port": "1024",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "false",
+        "x": 490,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0e43034148bfb869",
+        "type": "udp in",
+        "z": "feb2047f7bbe15eb",
+        "name": "",
+        "iface": "",
+        "port": "1024",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "c174524ec2d86a84"
+            ]
+        ]
+    },
+    {
+        "id": "c174524ec2d86a84",
+        "type": "debug",
+        "z": "feb2047f7bbe15eb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 340,
+        "wires": []
+    }
+]

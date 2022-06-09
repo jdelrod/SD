@@ -1,0 +1,92 @@
+[
+    {
+        "id": "86c8232deb6609da",
+        "type": "random",
+        "z": "66f7f74741a8e93c",
+        "name": "",
+        "low": "10",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "598d65f7583f4b52"
+            ]
+        ]
+    },
+    {
+        "id": "6e2144ef84c43c60",
+        "type": "inject",
+        "z": "66f7f74741a8e93c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "86c8232deb6609da"
+            ]
+        ]
+    },
+    {
+        "id": "598d65f7583f4b52",
+        "type": "mqtt out",
+        "z": "66f7f74741a8e93c",
+        "name": "",
+        "topic": "'aleatorio'",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b6c1242655dfdc1",
+        "x": 500,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9b6c1242655dfdc1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]

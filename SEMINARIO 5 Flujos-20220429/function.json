@@ -1,0 +1,144 @@
+[
+    {
+        "id": "74905f1185c6811a",
+        "type": "tab",
+        "label": "Nodo función",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "62398d5ee6284b35",
+        "type": "inject",
+        "z": "74905f1185c6811a",
+        "name": "Euros",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"divisa\":\"euro\",\"cantidad\":55}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "6e5d10c5dc54c45f"
+            ]
+        ]
+    },
+    {
+        "id": "6e5d10c5dc54c45f",
+        "type": "function",
+        "z": "74905f1185c6811a",
+        "name": "Conversor",
+        "func": "var cambio = 0;\n\nif (msg.payload.divisa == \"euro\"){\n    cambio = msg.payload.cantidad * 1.11;\n    msg.payload.cambio = cambio;\n    return [msg, null];\n}\nelse{\n    cambio = msg.payload.cantidad * 0.89;\n    msg.payload.cambio = cambio;\n    return [null, msg];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "172bde009be41f8c"
+            ],
+            [
+                "6a259c94c55fc17a"
+            ]
+        ]
+    },
+    {
+        "id": "fb4704f2bad5a89e",
+        "type": "inject",
+        "z": "74905f1185c6811a",
+        "name": "Dólares",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"divisa\":\"dólar\",\"cantidad\":13.45}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "6e5d10c5dc54c45f"
+            ]
+        ]
+    },
+    {
+        "id": "172bde009be41f8c",
+        "type": "template",
+        "z": "74905f1185c6811a",
+        "name": "Euros",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.cantidad}} euros equivalen a {{payload.cambio}} dólares",
+        "output": "str",
+        "x": 610,
+        "y": 120,
+        "wires": [
+            [
+                "4e485970b6d610e9"
+            ]
+        ]
+    },
+    {
+        "id": "4e485970b6d610e9",
+        "type": "debug",
+        "z": "74905f1185c6811a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6a259c94c55fc17a",
+        "type": "template",
+        "z": "74905f1185c6811a",
+        "name": "Dólares",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.cantidad}} dólares equivalen a {{payload.cambio}} euros",
+        "output": "str",
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "4e485970b6d610e9"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,79 @@
+[
+    {
+        "id": "91f1044290675fbc",
+        "type": "tab",
+        "label": "Post",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "64573f493aced4c1",
+        "type": "http in",
+        "z": "91f1044290675fbc",
+        "name": "",
+        "url": "/analyse",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "964c8512ad159285"
+            ]
+        ]
+    },
+    {
+        "id": "f5360bd568d1b1ae",
+        "type": "http response",
+        "z": "91f1044290675fbc",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 810,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c6084bd343ba4d19",
+        "type": "change",
+        "z": "91f1044290675fbc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "sentiment",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "f5360bd568d1b1ae"
+            ]
+        ]
+    },
+    {
+        "id": "964c8512ad159285",
+        "type": "sentiment",
+        "z": "91f1044290675fbc",
+        "name": "",
+        "property": "payload.text",
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "c6084bd343ba4d19"
+            ]
+        ]
+    }
+]

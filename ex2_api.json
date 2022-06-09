@@ -1,0 +1,103 @@
+[
+    {
+        "id": "43ea100e5c88f005",
+        "type": "tab",
+        "label": "ex2_api",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b6fcca15f11faa5c",
+        "type": "http in",
+        "z": "43ea100e5c88f005",
+        "name": "",
+        "url": "/reverse",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "c9a25c0df1f3b54d",
+                "701278321195f7b3"
+            ]
+        ],
+        "info": "{\n\"hol2\"\n}"
+    },
+    {
+        "id": "1ecaec6368cd59b6",
+        "type": "http response",
+        "z": "43ea100e5c88f005",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c9a25c0df1f3b54d",
+        "type": "debug",
+        "z": "43ea100e5c88f005",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2abb1056790ebb5a",
+        "type": "function",
+        "z": "43ea100e5c88f005",
+        "name": "",
+        "func": "var texto = msg.payload.str.split(\"\").reverse().join(\"\");\nmsg.payload = {\"reversed_str\": texto};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 260,
+        "wires": [
+            [
+                "1ecaec6368cd59b6"
+            ]
+        ]
+    },
+    {
+        "id": "701278321195f7b3",
+        "type": "change",
+        "z": "43ea100e5c88f005",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "flow",
+                "to": "msg.payload",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "2abb1056790ebb5a"
+            ]
+        ]
+    }
+]

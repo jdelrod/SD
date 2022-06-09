@@ -1,0 +1,57 @@
+[
+    {
+        "id": "e0ee665f899b677c",
+        "type": "tab",
+        "label": "GET endpoint",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cd2fa97192fee0ad",
+        "type": "http in",
+        "z": "e0ee665f899b677c",
+        "name": "",
+        "url": "/hello/:name",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "26061418e69702c0"
+            ]
+        ]
+    },
+    {
+        "id": "5fbcb1fe916364d1",
+        "type": "http response",
+        "z": "e0ee665f899b677c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 830,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "26061418e69702c0",
+        "type": "template",
+        "z": "e0ee665f899b677c",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "¡Hola, {{req.params.name}}!",
+        "output": "str",
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "5fbcb1fe916364d1"
+            ]
+        ]
+    }
+]

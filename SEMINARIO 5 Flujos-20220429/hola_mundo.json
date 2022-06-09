@@ -1,0 +1,56 @@
+[
+    {
+        "id": "e31e29462f44f011",
+        "type": "tab",
+        "label": "¡Hola, mundo!",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "aa299d54b18559de",
+        "type": "inject",
+        "z": "e31e29462f44f011",
+        "name": "¡Hola, mundo!",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "¡Hola, mundo!",
+        "payloadType": "str",
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "a2d10c8260d0a042"
+            ]
+        ]
+    },
+    {
+        "id": "a2d10c8260d0a042",
+        "type": "debug",
+        "z": "e31e29462f44f011",
+        "name": "Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 200,
+        "wires": []
+    }
+]

@@ -1,0 +1,85 @@
+[
+    {
+        "id": "3c506036e3afb5c6",
+        "type": "mqtt in",
+        "z": "9b69eec4a034009b",
+        "name": "",
+        "topic": "'aleatorio'",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "9b6c1242655dfdc1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 820,
+        "y": 240,
+        "wires": [
+            [
+                "fea021455f59b271"
+            ]
+        ]
+    },
+    {
+        "id": "c969944acf2cffe5",
+        "type": "debug",
+        "z": "9b69eec4a034009b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fea021455f59b271",
+        "type": "function",
+        "z": "9b69eec4a034009b",
+        "name": "Suma_Pares",
+        "func": "var contador = context.get('cont') || 0;\n\nif (parseInt(msg.payload) % 2 == 0){\n    contador = contador + parseInt(msg.payload);\n    context.set('cont', contador)\n    msg.payload = \"par: (\" + msg.payload + \") -> contador = (\" + String(contador) + \")\" ;}\nelse{\n    msg.payload = \"Impar: \" + msg.payload  \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 140,
+        "wires": [
+            [
+                "c969944acf2cffe5"
+            ]
+        ]
+    },
+    {
+        "id": "9b6c1242655dfdc1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]

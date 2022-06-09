@@ -1,0 +1,97 @@
+[
+    {
+        "id": "b85d8a8baf36ee5c",
+        "type": "tab",
+        "label": "GET Request",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9baa75e00cb55525",
+        "type": "debug",
+        "z": "b85d8a8baf36ee5c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "da273313765df84f",
+        "type": "http request",
+        "z": "b85d8a8baf36ee5c",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q={{{city}}}&appid={{key}}&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "1827f6f557a02c97"
+            ]
+        ]
+    },
+    {
+        "id": "0b5d4fb9d348c961",
+        "type": "inject",
+        "z": "b85d8a8baf36ee5c",
+        "name": "",
+        "props": [
+            {
+                "p": "city",
+                "v": "Cádiz",
+                "vt": "str"
+            },
+            {
+                "p": "key",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "da273313765df84f"
+            ]
+        ]
+    },
+    {
+        "id": "1827f6f557a02c97",
+        "type": "template",
+        "z": "b85d8a8baf36ee5c",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Estamos a {{payload.main.temp}}º grados",
+        "output": "str",
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "9baa75e00cb55525"
+            ]
+        ]
+    }
+]
