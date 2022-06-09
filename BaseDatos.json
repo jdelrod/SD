@@ -1,0 +1,371 @@
+{
+    "Usuarios": [
+        {
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ]
+        },
+        {
+            "user": [
+                "22334466A",
+                "userSX",
+                "passwordSDXX"
+            ]
+        }
+    ],
+    "BD": [
+        {
+            "roomId": 1,
+            "capacity": 217,
+            "Resources": [
+                "proyector1",
+                "1 altavoz",
+                "puntero laser azul"
+            ],
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "1-0",
+                "",
+                "",
+                "",
+                0,
+                ""
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 1,
+            "capacity": 217,
+            "Resources": [
+                "proyector1",
+                "1 altavoz",
+                "puntero laser azul"
+            ],
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "1-1",
+                "22334455A",
+                "05/04/2022",
+                "11:30",
+                90,
+                "13:00"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 2,
+            "capacity": 200,
+            "Resources": [
+                "proyector2",
+                "1 micro",
+                "puntero laser rojo"
+            ],
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "2-0",
+                "",
+                "",
+                "",
+                0,
+                ""
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 2,
+            "capacity": 200,
+            "Resources": [
+                "proyector2",
+                "1 micro",
+                "puntero laser rojo"
+            ],
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "2-1",
+                "22334455A",
+                "05/04/2022",
+                "10:30",
+                30,
+                "11:00"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 3,
+            "capacity": 250,
+            "Resources": [
+                "proyector3",
+                "2 altavoces",
+                "puntero laser verde"
+            ],
+            "user": [
+                "22334466A",
+                "userSX",
+                "passwordSDXX"
+            ],
+            "datosReserva": [
+                "3-0",
+                "",
+                "",
+                "",
+                0,
+                ""
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 3,
+            "capacity": 250,
+            "Resources": [
+                "proyector3",
+                "2 altavoces",
+                "puntero laser verde"
+            ],
+            "user": [
+                "22334466A",
+                "userSX",
+                "passwordSDXX"
+            ],
+            "datosReserva": [
+                "3-1",
+                "22334466A",
+                "05/04/2022",
+                "10:30",
+                160,
+                "13:00"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 1,
+            "capacity": 217,
+            "Resources": [
+                "proyector1",
+                "1 altavoz",
+                "puntero laser azul"
+            ],
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "1-2",
+                "22334455A",
+                "05/04/2022",
+                "13:00",
+                120,
+                "15:00"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 3,
+            "capacity": 250,
+            "Resources": [
+                "proyector3",
+                "2 altavoces",
+                "puntero laser verde"
+            ],
+            "user": [
+                "22334466A",
+                "userSX",
+                "passwordSDXX"
+            ],
+            "datosReserva": [
+                "3-2",
+                "22334466A",
+                "05/04/2022",
+                "12:30",
+                160,
+                "15:00"
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": "Reserva Anulada"
+        },
+        {
+            "roomId": 3,
+            "capacity": 250,
+            "Resources": [
+                "proyector3",
+                "2 altavoces",
+                "puntero laser verde"
+            ],
+            "user": [
+                "22334466A",
+                "userSX",
+                "passwordSDXX"
+            ],
+            "datosReserva": [
+                "3-3",
+                "22334466A",
+                "05/04/2022",
+                "17:30",
+                60,
+                "18:00"
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 4,
+            "capacity": null,
+            "Resources": null,
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "4-0",
+                "",
+                "",
+                "",
+                0,
+                ""
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 5,
+            "capacity": 600,
+            "Resources": null,
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "5-0",
+                "",
+                "",
+                "",
+                0,
+                ""
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 5,
+            "capacity": 600,
+            "Resources": null,
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "5-1",
+                "22334455A",
+                "05/04/2022",
+                "10:00",
+                120,
+                "12:00"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 6,
+            "capacity": 400,
+            "Resources": null,
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "6-0",
+                "",
+                "",
+                "",
+                0,
+                ""
+            ],
+            "ocupada": 0,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 5,
+            "capacity": 600,
+            "Resources": null,
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "5-2",
+                "22334455A",
+                "05/04/2022",
+                "09:00",
+                30,
+                "09:30"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        },
+        {
+            "roomId": 5,
+            "capacity": 600,
+            "Resources": null,
+            "user": [
+                "22334455A",
+                "userSD",
+                "passwordSD45"
+            ],
+            "datosReserva": [
+                "5-3",
+                "22334455A",
+                "10/04/2022",
+                "10:12",
+                61,
+                "11:13"
+            ],
+            "ocupada": 1,
+            "errorMessage": "",
+            "message": ""
+        }
+    ]
+}
